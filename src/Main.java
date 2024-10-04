@@ -62,6 +62,7 @@ public class Main {
                         System.out.println("\nBook not found.");
                     break;
                 case 6:
+                    System.out.println("Goodbye!");
                     System.exit(0);
                     break;
             }
