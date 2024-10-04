@@ -29,6 +29,15 @@ public class Main {
             System.out.println("Book not found.");
         }
 
+        System.out.println("\nSearching for book with price 199.99:");
+        foundBook = library.linearSearch( 199.99);
+
+        if (foundBook != null) {
+            foundBook.displayDetails();
+        } else {
+            System.out.println("Book not found.");
+        }
+
         System.out.println("\nTotal number of books: " + Book.getBookCount());
     }
 }
