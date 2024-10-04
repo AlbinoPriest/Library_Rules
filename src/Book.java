@@ -1,8 +1,10 @@
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Random;
 
 public class Book {
     private static int bookCount = 0;
+    private static HashSet<Integer> bookIDs = new HashSet<>();
     public static int getBookCount() {
         return bookCount;
     }
@@ -15,9 +17,18 @@ public class Book {
     public Book(String title, double price) {
         this.title = title;
         this.price = price;
-        this.bookId = new Random().nextInt(1000);
+        this.bookId = generateBookId();
         this.addedDate = new Date();
         bookCount++;
+    }
+
+    private static int generateBookId() {
+        int bookIdCandidate = new Random().nextInt(1000);
+        if (bookIDs.contains(bookIdCandidate)) {
+            generateBookId();
+        } else {
+            return bookIdCandidate;
+        }
     }
 
     public void displayDetails() {
