@@ -24,6 +24,15 @@ public class LibrarySystem {
         return null;
     }
 
+    public Book linearSearch(double price) {
+        for (Book book : books) {
+            if (book.search(price)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
     public void bubbleSortByPrice() {
         int n = books.size();
         for (int i = 0; i < n - 1; i++) {
