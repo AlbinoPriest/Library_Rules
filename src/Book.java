@@ -18,17 +18,17 @@ public class Book {
         this.title = title;
         this.price = price;
         this.bookId = generateBookId();
+        bookIDs.add(this.bookId);
         this.addedDate = new Date();
         bookCount++;
     }
 
     private static int generateBookId() {
-        int bookIdCandidate = new Random().nextInt(1000);
-        if (bookIDs.contains(bookIdCandidate)) {
-            generateBookId();
-        } else {
+        int bookIdCandidate;
+        do {
+            bookIdCandidate = new Random().nextInt(1000);
+        } while (bookIDs.contains(bookIdCandidate));
             return bookIdCandidate;
-        }
     }
 
     public void displayDetails() {
