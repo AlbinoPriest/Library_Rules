@@ -4,5 +4,5 @@ public interface Media {
     boolean search(double price);
     double getPrice();
     String getTitle();
-    void generateBookId();
+    int generateBookId();
 }

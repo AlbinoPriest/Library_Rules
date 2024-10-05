@@ -1,8 +1,12 @@
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class Book implements Media {
     private static int bookCount = 1;
+    private static Set<Integer> bookIds = new HashSet<>();
+
     public static int getBookCount() {
         return bookCount;
     }
@@ -15,7 +19,7 @@ public class Book implements Media {
     public Book(String title, double price) {
         this.title = title;
         this.price = price;
-        this.bookId = new Random().nextInt(1000);
+        this.bookId = generateBookId();
         this.addedDate = new Date();
         bookCount++;
     }
@@ -29,8 +33,12 @@ public class Book implements Media {
     }
 
     @Override
-    public void generateBookId() {
-
+    public int generateBookId() {
+        int bookIdCandidate;
+        do {
+            bookIdCandidate = new Random().nextInt(4000);
+        } while (bookIds.contains(bookIdCandidate));
+        return bookIdCandidate;
     }
 
     @Override
