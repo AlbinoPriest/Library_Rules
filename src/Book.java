@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.Random;
 
 public class Book {
@@ -21,7 +22,10 @@ public class Book {
     }
 
     public void displayDetails() {
-        System.out.printf("Title: %s, Price: %.2f, Book ID: %d, Added Date: %s\n", title, price, bookId, addedDate.toString());
+        SimpleDateFormat simpleAddedDate = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = simpleAddedDate.format(addedDate);
+
+        System.out.printf("Title: %s, Price: %.2f, Book ID: %d, Added Date: %s\n", title, price, bookId, formattedDate);
     }
 
     public boolean search(String query) {
