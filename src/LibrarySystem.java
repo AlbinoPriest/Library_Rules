@@ -6,7 +6,7 @@ public class LibrarySystem {
 
     public void addBook(Media book) {
         books.add(book);
-        System.out.println("Book added: " + book.title());
+        System.out.println("Book added: " + book.getTitle());
     }
 
     public void displayAllBooks() {
@@ -37,7 +37,7 @@ public class LibrarySystem {
         int n = books.size();
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if (books.get(j).price() > books.get(j + 1).price()) {
+                if (books.get(j).getPrice() > books.get(j + 1).getPrice()) {
                     Collections.swap(books, j, j + 1);
                 }
             }
@@ -49,7 +49,7 @@ public class LibrarySystem {
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                if (books.get(j).title().compareTo(books.get(minIndex).title()) < 0) {
+                if (books.get(j).getTitle().compareTo(books.get(minIndex).getTitle()) < 0) {
                     minIndex = j;
                 }
             }

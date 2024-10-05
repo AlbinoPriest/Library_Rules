@@ -37,4 +37,14 @@ public class Book implements Media {
     public boolean search(double price) {
         return this.price == price;
     }
+
+    @Override
+    public double getPrice() {
+        return this.price;
+    }
+
+    @Override
+    public String getTitle() {
+        return this.title;
+    }
 }
