@@ -2,7 +2,7 @@ import java.util.Date;
 import java.util.Random;
 
 public class Book {
-    private static int bookCount = 0;
+    private static int bookCount = 1;
     public static int getBookCount() {
         return bookCount;
     }
@@ -21,7 +21,7 @@ public class Book {
     }
 
     public void displayDetails() {
-        System.out.printf("Title: %s, Price: %.2f, Book ID: %d, Added Date: %s\n", title, price, bookId, addedDate.toString());
+        System.out.printf("Title: %s, Price: %.2f, Book ID: %04d, Added Date: %s\n", title, price, bookId, addedDate.toString());
     }
 
     public boolean search(String query) {
