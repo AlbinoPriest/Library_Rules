@@ -1,7 +1,7 @@
 import java.util.Date;
 import java.util.Random;
 
-public class Book {
+public class Book implements Media {
     private static int bookCount = 1;
     public static int getBookCount() {
         return bookCount;
@@ -23,11 +23,17 @@ public class Book {
     public void displayDetails() {
         System.out.printf("Title: %s, Price: %.2f, Book ID: %04d, Added Date: %s\n", title, price, bookId, addedDate.toString());
     }
-
+    @Override
     public boolean search(String query) {
         return title.contains(query);
     }
 
+    @Override
+    public void generateBookId() {
+
+    }
+
+    @Override
     public boolean search(double price) {
         return this.price == price;
     }

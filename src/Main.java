@@ -22,7 +22,7 @@ public class Main {
         library.displayAllBooks();
 
         System.out.println("\nSearching for book with title 'Java':");
-        Book foundBook = library.linearSearch("Java");
+        Media foundBook = library.linearSearch("Java");
         if (foundBook != null) {
             foundBook.displayDetails();
         } else {
