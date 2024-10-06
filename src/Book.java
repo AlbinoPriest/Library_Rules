@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-
 public class Book implements Media {
     private static int bookCount = 0;
     private static Set<Integer> bookIds = new HashSet<>();
