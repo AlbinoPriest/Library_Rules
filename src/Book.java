@@ -3,11 +3,6 @@ import java.text.SimpleDateFormat;
 import java.util.Random;
 
 public class Book {
-    private static int bookCount = 0;
-    public static int getBookCount() {
-        return bookCount;
-    }
-
     protected String title;
     protected double price;
     protected int bookId;
@@ -18,7 +13,6 @@ public class Book {
         this.price = price;
         this.bookId = new Random().nextInt(1000);
         this.addedDate = new Date();
-        bookCount++;
     }
 
     public void displayDetails() {
