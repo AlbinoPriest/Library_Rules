@@ -2,11 +2,6 @@ import java.util.Date;
 import java.util.Random;
 
 public class Book {
-    private static int bookCount = 0;
-    public static int getBookCount() {
-        return bookCount;
-    }
-
     protected String title;
     protected double price;
     protected int bookId;
