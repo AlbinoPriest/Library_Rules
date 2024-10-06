@@ -42,6 +42,7 @@ public class Main {
                 case 2:
                     System.out.println("All books:");
                     library.displayAllBooks();
+                    System.out.println("\nTotal number of books: " + LibrarySystem.getBookCount());
                     break;
                 case 3:
                     System.out.println("\nSorting books by price:");
@@ -67,6 +68,5 @@ public class Main {
                     break;
             }
         }
-        //System.out.println("\nTotal number of books: " + Book.getBookCount());
     }
 }
