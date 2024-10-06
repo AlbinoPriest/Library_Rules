@@ -2,30 +2,30 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class LibrarySystem {
-    private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Media> books = new ArrayList<>();
 
-    public void addBook(Book book) {
+    public void addBook(Media book) {
         books.add(book);
-        System.out.println("Book added: " + book.title);
+        System.out.println("Media added: " + book.getTitle());
     }
 
     public void displayAllBooks() {
-        for (Book book : books) {
+        for (Media book : books) {
             book.displayDetails();
         }
     }
 
-    public Book linearSearch(String title) {
-        for (Book book : books) {
-            if (book.search(title)) {
+    public Media linearSearch(String title) {
+        for (Media book : books) {
+            if (book.search(book.getTitle())) {
                 return book;
             }
         }
         return null;
     }
 
-    public Book linearSearch(double price) {
-        for (Book book : books) {
+    public Media linearSearch(double price) {
+        for (Media book : books) {
             if (book.search(price)) {
                 return book;
             }
@@ -37,7 +37,7 @@ public class LibrarySystem {
         int n = books.size();
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                if ( Double.compare(books.get(j).price , books.get(j + 1).price)>0) {
+                if ( Double.compare(books.get(j).getPrice() , books.get(j + 1).getPrice()) > 0) {
                     Collections.swap(books, j, j + 1);
                 }
             }
@@ -49,8 +49,8 @@ public class LibrarySystem {
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                String currentTitle = books.get(j).title != null ? books.get(j).title.toLowerCase() : "";
-                String minTitle = books.get(minIndex).title != null ? books.get(minIndex).title.toLowerCase() : "";
+                String currentTitle = books.get(j).getTitle() != null ? books.get(j).getTitle().toLowerCase() : "";
+                String minTitle = books.get(minIndex).getTitle() != null ? books.get(minIndex).getTitle().toLowerCase() : "";
                 if (currentTitle.compareTo(minTitle) < 0) {
                     minIndex = j;
                 }

@@ -55,7 +55,7 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("\nSearching for book with title 'Java':");
-                    Book foundBook = library.linearSearch("Java");
+                    Media foundBook = library.linearSearch("Java");
                     if (foundBook != null)
                         foundBook.displayDetails();
                     else

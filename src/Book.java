@@ -1,9 +1,13 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
-public class Book {
+public class Book implements Media {
     private static int bookCount = 0;
+    private static Set<Integer> bookIds = new HashSet<>();
+
     public static int getBookCount() {
         return bookCount;
     }
@@ -16,7 +20,7 @@ public class Book {
     public Book(String title, double price) {
         this.title = title;
         this.price = price;
-        this.bookId = new Random().nextInt(1000);
+        this.bookId = generateBookId();
         this.addedDate = new Date();
         bookCount++;
     }
@@ -35,4 +39,24 @@ public class Book {
     public boolean search(double price) {
         return this.price == price;
     }
+
+    @Override
+    public int generateBookId() {
+        int bookIdCandidate;
+        do {
+            bookIdCandidate = new Random().nextInt(4000);
+        } while (bookIds.contains(bookIdCandidate));
+        return bookIdCandidate;
+    }
+
+    @Override
+    public double getPrice() {
+        return this.price;
+    }
+
+    @Override
+    public String getTitle() {
+        return this.title;
+    }
+
 }
