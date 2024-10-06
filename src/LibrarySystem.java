@@ -4,9 +4,15 @@ import java.util.Collections;
 public class LibrarySystem {
     private ArrayList<Media> books = new ArrayList<>();
 
+    private static int bookCount = 0;
+    public static int getBookCount() {
+        return bookCount;
+    }    
+
     public void addBook(Media book) {
         books.add(book);
         System.out.println("Media added: " + book.getTitle());
+        bookCount++;
     }
 
     public void displayAllBooks() {
