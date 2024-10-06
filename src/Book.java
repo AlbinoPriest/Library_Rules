@@ -12,7 +12,6 @@ public class Book {
         this.price = price;
         this.bookId = new Random().nextInt(1000);
         this.addedDate = new Date();
-        bookCount++;
     }
 
     public void displayDetails() {
