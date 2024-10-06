@@ -12,6 +12,7 @@ public class LibrarySystem {
     public void addBook(Book book) {
         books.add(book);
         System.out.println("Book added: " + book.title);
+        bookCount++;
     }
 
     public void displayAllBooks() {
